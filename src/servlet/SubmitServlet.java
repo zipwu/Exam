@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import util.IsRight;
+import dao.ExamResultRecordDAO;
 import dao.QuestionDao;
 import dao.ScoreRecordDAO;
 import entity.User;
@@ -34,10 +35,13 @@ public class SubmitServlet extends HttpServlet {
 			QuestionDao questionDao = new QuestionDao();
 			String answerString = questionDao.getAnswerByID(Integer.parseInt(parameterName));
 			String[] options	=	(String[])request.getParameterValues(parameterName);
+			ExamResultRecordDAO examResultRecordDAO = new ExamResultRecordDAO();
 			if (IsRight.isTrue(options, answerString)) {
 				count += 2.5;
+				examResultRecordDAO.insertExamResult(user, Integer.parseInt(parameterName), true);
 			}else {
 				count += 0;
+				examResultRecordDAO.insertExamResult(user, Integer.parseInt(parameterName), false);
 				}
 		}
 		System.out.println(count);

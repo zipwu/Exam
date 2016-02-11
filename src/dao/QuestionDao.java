@@ -126,6 +126,7 @@ public class QuestionDao {
 	{
 		return list.get(ID).getAnswer();
 	}
+	
 	public String getAnswerByID(int ID)
 	{
 		try {
@@ -170,9 +171,53 @@ public class QuestionDao {
 			}
 		}
 		return null;
-		
 	}
-	
+	 
+	public String getQuestionByID(int ID)
+	{
+		try {
+			connection = dbHelper.getConnection();
+			String sql = "SELECT * FROM exam_01 WHERE ID = ?";
+			statement = connection.prepareStatement(sql);
+			statement.setInt(1, ID);
+			resultSet = statement.executeQuery();
+			if (resultSet!=null) {
+				if(resultSet.next()) {
+					String Question = resultSet.getString("Question");
+					return Question;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally{
+			if (resultSet!=null) {
+				try {
+					resultSet.close();
+					resultSet=null;
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (statement!=null) {
+				try {
+					statement.close();
+					statement = null;
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+			if (connection!=null) {
+				dbHelper.close();
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				};
+			}
+		}
+		return null;
+	}
 	
 	public ArrayList<Question> getQuestionsByKeyword0(String Keyword)
 	{

@@ -13,7 +13,7 @@ public class DBHelper {
 	private static final String DBURL = "jdbc:mysql://222.73.209.52:8899/test";
 	private static final String DBUSER = "wujiaye";
 	private static final String DBPASSWORD = "123456";
-	private static Connection connection = null;
+	private Connection connection = null;
 	
 	public Connection getConnection() throws Exception
 	{
