@@ -4,7 +4,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 String name = (String) request.getSession().getAttribute("name");
-ArrayList list = (ArrayList)request.getSession().getAttribute("QuestionList");
+ArrayList<Question> list = (ArrayList<Question>)request.getSession().getAttribute("QuestionList");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
