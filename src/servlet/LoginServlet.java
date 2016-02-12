@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import test_tool.RandQuestionArray;
+import util.RandQuestionArray;
 import dao.UserDao;
 import entity.Question;
 import entity.User;
