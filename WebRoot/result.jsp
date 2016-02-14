@@ -30,6 +30,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	User user = (User) request.getSession().getAttribute("user");
   	String name = user.getName();
 	Double score = (Double)request.getSession().getAttribute("score");
+	Double count = (Double)request.getSession().getAttribute("count");
+	String graphURLPie = (String)request.getSession().getAttribute("graphURLPie");
+	String RightgraphURLPie = (String)request.getSession().getAttribute("RightgraphURLPie");
 	%>
   </head>
   <body>
@@ -40,19 +43,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <h5>你好！<%=name %>。你的成绩是<%=score %>分。</h5>
     </div>
     </div>
-    <div class="examResult">
-    <div class="context">
-   
-    <div class="background"></div>
-    <div class="text">
-    <br>
-<!--       <div id='ichart-render'></div> -->
-    </div>
-    </div>
-    <div class="bottom">
-	 <h5>中国电信</h5>
-	 </div>
-	 </div>
+    <div class="exam">
+    	<div class="graph">
+    	<br>
+		<img src="<%= graphURLPie %>" width=700 height=500  border=0>
+		<br>
+		<br>
+		<img src="<%= RightgraphURLPie %>" width=700 height=500  border=0>
+		
+    	</div>
+	</div>
+	<div class="bottom">
+	<h5>中国电信</h5>
+	</div>
     </div>
   </body>
 </html>

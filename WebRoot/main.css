@@ -84,6 +84,10 @@ body{
 .option {
 	margin:0px;
 }
+.graph{
+	width:700px;
+	margin:10px auto;
+}
 .bottom {
 	background:url(images/google.jpg) fixed;
 	background-size:cover;

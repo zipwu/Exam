@@ -382,6 +382,50 @@ public class QuestionDao {
 			}
 		}
 	}
+	public String getKeyword0ById(int ID){
+		try {
+			connection = dbHelper.getConnection();
+			String sql = "SELECT * FROM exam_01 WHERE ID = ?";
+			statement = connection.prepareStatement(sql);
+			statement.setInt(1, ID);
+			resultSet = statement.executeQuery();
+			if (resultSet!=null) {
+				if(resultSet.next()) {
+					String Keyword0 = resultSet.getString("Keyword0");
+					return Keyword0;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally{
+			if (resultSet!=null) {
+				try {
+					resultSet.close();
+					resultSet=null;
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (statement!=null) {
+				try {
+					statement.close();
+					statement = null;
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+			if (connection!=null) {
+				dbHelper.close();
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				};
+			}
+		}
+		return null;
+	}
 	
 	public boolean isConnected()
 	{	
