@@ -64,9 +64,9 @@ public class QuestionDao {
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				};
+				}
 			}
-		}	
+		}
 	}
 	
 	public ArrayList<Integer> getAllQuestionsID(){
@@ -107,7 +107,7 @@ public class QuestionDao {
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				};
+				}
 			}
 		}
 	}
@@ -166,8 +166,9 @@ public class QuestionDao {
 				try {
 					connection.close();
 				} catch (SQLException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
-				};
+				}
 			}
 		}
 		return null;
@@ -212,8 +213,9 @@ public class QuestionDao {
 				try {
 					connection.close();
 				} catch (SQLException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
-				};
+				}
 			}
 		}
 		return null;
@@ -268,7 +270,7 @@ public class QuestionDao {
 					connection.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-				};
+				}
 			}
 		}
 	}
@@ -297,34 +299,13 @@ public class QuestionDao {
 			}
 			return list;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}finally{
-			if (resultSet!=null) {
-				try {
-					resultSet.close();
-					resultSet=null;
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (statement!=null) {
-				try {
-					statement.close();
-					statement = null;
-				} catch (Exception e2) {
-					e2.printStackTrace();
-				}
-			}
-			if (connection!=null) {
-				dbHelper.close();
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				};
+			try {
+				dbHelper.close(resultSet, statement, null, null, connection);
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
 		}
 	}
@@ -377,8 +358,9 @@ public class QuestionDao {
 				try {
 					connection.close();
 				} catch (SQLException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
-				};
+				}
 			}
 		}
 	}
@@ -420,8 +402,9 @@ public class QuestionDao {
 				try {
 					connection.close();
 				} catch (SQLException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
-				};
+				}
 			}
 		}
 		return null;

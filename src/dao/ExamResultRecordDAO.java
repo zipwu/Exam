@@ -38,16 +38,10 @@ public class ExamResultRecordDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
-			if (statement!=null) {
-				try {
-					statement.close();
-					statement=null;
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (connection!=null) {
-				dbHelper.close();
+			try {
+				dbHelper.close(null, statement, null, null, connection);
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
 		}
 	}
