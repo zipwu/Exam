@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 					path ="choose.jsp";
 					user = userDao.getUserbyUsername(username);//通过用户数据访问对象实例，获取用户实例
 					request.getSession().setAttribute("user", user);
+					request.getSession().setAttribute("username", user.getUsername());
 					System.out.println(user.getName());//获得用户姓名，并输出。
 					request.getSession().setAttribute("name", user.getName());//将用户姓名放入session中，以供其他页面调用
 					request.getSession().setAttribute("role", user.getRole());//将用户的角色放入session中，以供其他页面调用

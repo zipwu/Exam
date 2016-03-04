@@ -7,11 +7,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
+<head>
+    <base href="<%=basePath%>"> 
     <title>考试结果</title>
-    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -34,28 +32,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	String graphURLPie = (String)request.getSession().getAttribute("graphURLPie");
 	String RightgraphURLPie = (String)request.getSession().getAttribute("RightgraphURLPie");
 	%>
-  </head>
-  <body>
-    <div class="container">
-    <div class="nav">
-    <div class="nav_back"></div>
-    <div class="nav_text">
-    <h5>你好！<%=name %>。你的成绩是<%=score %>分。</h5>
-    </div>
-    </div>
-    <div class="exam">
-    	<div class="graph">
-    	<br>
-		<img src="<%= graphURLPie %>" width=700 height=500  border=0>
-		<br>
-		<br>
-		<img src="<%= RightgraphURLPie %>" width=700 height=500  border=0>
-		
+</head>
+<body>
+	<div class="container">
+    	<div class="nav">
+    		<div class="nav_back"></div>
+    		<div class="nav_text">
+    		<h5>你好！<%=name %>。你的成绩是<%=score %>分。</h5>
+    		</div>
     	</div>
-	</div>
-	<div class="bottom">
-	<h5>中国电信</h5>
-	</div>
+    	<div class="exam">
+    		<div class="graph">
+    		<br>
+			<img src="<%= graphURLPie %>" width=700 height=500  border=0>
+			<br>
+			<br>
+			<img src="<%= RightgraphURLPie %>" width=700 height=500  border=0>
+    		</div>
+		</div>
+		<div class="bottom"><h5>中国电信</h5></div>
     </div>
   </body>
 </html>
