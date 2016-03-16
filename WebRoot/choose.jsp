@@ -33,13 +33,13 @@ String name = (String) request.getSession().getAttribute("name");
    		 	<div class="context" >
 		 	<div class="background"></div>
 		 	<div class="text">
-		 		<span>No.1</span><br>
-				<span>《岗位练兵考试》答题情况</span>
-				<a href="testrecord.jsp">点击查看结果</a><br>
+		 		<span>1.</span><br>
+				<span>《岗位练兵考试》</span>
+				<a href="exam.jsp">点击进入考试</a><br>
 				<br>
 				<span>-------------------------------------------------------------------------------</span><br>
-				<span>No.2</span><br>
-				<span>您尚未有更多的考试需要参加</span>
+				<span>2.</span><br>
+				<a href="testrecord.jsp">查看考试详情</a>
 		 	</div>
 		 	</div>
 		</div>
