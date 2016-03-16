@@ -39,6 +39,7 @@ String name = (String) request.getSession().getAttribute("name");
 				<br>
 				<span>-------------------------------------------------------------------------------</span><br>
 				<span>2.</span><br>
+				<span>《岗位练兵考试》</span>
 				<a href="testrecord.jsp">查看考试详情</a>
 		 	</div>
 		 	</div>
