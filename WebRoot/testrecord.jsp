@@ -47,7 +47,7 @@ ArrayList<TestRecord> testRecords =
     				<div class="background"></div>
     				<div class="text">
     				<span><%=i%>.测试时间：</span><%=userScoreRecord.getDate()%><br>
-    				<span>&nbsp 测试成绩：</span><%=userScoreRecord.getScore()%><br>
+    				<span>测试成绩：</span><%=userScoreRecord.getScore()%><br>
 					</div>
 					</div>
     				<%
@@ -62,7 +62,7 @@ ArrayList<TestRecord> testRecords =
     				<div class="background"></div>
     				<div class="text">
     				<span><%=j%>.测试时间：</span><%=testRecord.getDateTime()%><br>
-    				<span>&nbsp 答错题目：</span><%=testRecord.getQuestion()%><br>
+    				<span>答错题目：</span><%=testRecord.getQuestion()%><br>
 					</div>
 					</div>
     				 <%
